@@ -1,0 +1,208 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+
+//def app_android = this.rootProject.ext.app_android
+
+android {
+    compileSdkVersion app_android.compileSdkVersion
+    buildToolsVersion app_android.buildToolsVersion
+    defaultConfig {
+        applicationId "com.example.hellow"
+        minSdkVersion app_android.minSdkVersion
+        targetSdkVersion app_android.targetSdkVersion
+        versionCode app_android.versionCode
+        versionName app_android.versionName
+        testInstrumentationRunner app_android.testInstrumentationRunner
+
+
+        // 在gradle文件中配置选项参数值（用于APT传参接收）
+        // 同学们注意：切记：必须写在defaultConfig节点下
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                arguments = [moduleName: project.getName(), packageNameForAPT: packageNameForAPT]
+//            }
+//        }
+
+        //defaultConfig
+        javaCompileOptions {
+//            annotationProcessorOptions {
+//                arguments = [myvalue: 'hello ni hao javapoet']
+//
+//            }
+
+            kapt {
+
+                arguments {
+
+                    arg("myvalue", "hello ni hao javapoet")
+
+                }
+
+            }
+//
+        }
+
+
+    }
+
+
+    signingConfigs {
+
+        config {
+            storeFile file('../text1.jk')
+            keyAlias 'key0'
+            keyPassword '123456'
+            storePassword '123456'
+        }
+
+
+    }
+
+
+    //android 序列化配置
+    androidExtensions {
+        experimental = true
+    }
+
+    //解决找不到实体类的配置aidl
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'src/main/aidl']
+            // resources.srcDirs = ['src/main/java', 'src/main/aidl']
+            // aidl.srcDirs = ['src/main/aidl']
+        }
+    }
+
+
+    //使用databinding的配置
+    dataBinding {
+        enabled = true
+    }
+
+    //指定kontlin jvm 编译的版本
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+
+    buildTypes {
+
+        debug {
+
+
+            signingConfig signingConfigs.debug
+            buildConfigField("String", "APP_URL", "\"${ap_url.debug}\"")
+
+
+        }
+
+        release {
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+}
+
+kotlin {
+    experimental {
+        coroutines 'enable'
+    }
+}
+
+dependencies {
+
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //implementation "androidx.appcompat:appcompat:$appcompat"
+    //implementation 'androidx.core:core-ktx:1.0.2'
+
+    //compileOnly 'androidx.recyclerview:recyclerview:1.1.0'
+    //implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    implementation app_Impl.constraintlayout
+
+    testImplementation 'junit:junit:4.12'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    //androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    //androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+    implementation project(path: ':mylibrary')
+    // 公共基础库
+    implementation project(":comment")
+    if (!isRealse) {
+        implementation project(":order")
+        implementation project(":person")
+    }
+
+    // 依赖注解
+    implementation project(":annotation")
+
+    // 当我们点击 图标  进入编译期  全盘扫描 注解ARouter
+    // 想要 compiler 有效，必须关联起来
+    // 依赖注解处理器
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    kapt project(":comilper")
+
+
+    //网络请求模块
+    implementation 'com.squareup.retrofit2:retrofit:2.0.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.3.1'
+
+    def nav_version = "2.3.0-alpha01"
+    // Kotlin jepack 导航栏
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    //协程库
+    //依赖协程核心库
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines"
+    //依赖当前平台所对应的平台库
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines"
+
+    //使用paging库的依赖
+    def paging_version = "2.1.1"
+    implementation "androidx.paging:paging-runtime:$paging_version"
+    // For Kotlin use paging-runtime-ktx
+
+    // alternatively - without Android dependencies for testing
+    //testImplementation "androidx.paging:paging-common:$paging_version"
+    // For Kotlin use paging-common-ktx
+
+    def room_version = "2.2.3"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    // For Kotlin use kapt instead of annotationProcessor
+
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:$room_version"
+
+    def work_version = "2.3.0"//稳定版本
+    // Kotlin + coroutines
+    implementation "androidx.work:work-runtime-ktx:$work_version"
+    // optional - Test helpers
+    // androidTestImplementation "androidx.work:work-testing:$work_version"
+
+
+}

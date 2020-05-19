@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ScondActivity">
+
+<!--    <FrameLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"/>-->
+
+    <Button
+        android:id="@+id/mbutton_lifecyle"
+        android:textSize="20dp"
+        android:text="点击我测试lifecycle"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <Button
+        android:id="@+id/mbutton_mvp"
+        android:textSize="20dp"
+        android:text="点击我测试lifecycle"
+        app:layout_constraintTop_toBottomOf="@+id/mbutton_lifecyle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <TextView
+        android:id="@+id/mVmText"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:text="显示viewmode数据"
+        app:layout_constraintTop_toBottomOf="@+id/mbutton_mvp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <Button
+        android:id="@+id/mbutton_aidl"
+        android:textSize="20dp"
+        android:text="点击我Aidl"
+        app:layout_constraintTop_toBottomOf="@+id/mVmText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

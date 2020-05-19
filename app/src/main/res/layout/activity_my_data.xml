@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="userbin"
+            type="com.example.hellow.databinding.User" />
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".databinding.MyDataActivity">
+
+
+        <TextView
+            android:textSize="30dp"
+            android:text="@{userbin.name,default = chen}"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+        <TextView
+            android:textSize="30dp"
+            android:text="@{userbin.age,default = 10}"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+        <Button
+            android:id="@+id/myDataBindingBt"
+            android:textSize="20dp"
+            android:text="点击我"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="80dp" />
+        <Button
+            android:textSize="20dp"
+            android:text="name"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="80dp" />
+
+
+    </LinearLayout>
+</layout>

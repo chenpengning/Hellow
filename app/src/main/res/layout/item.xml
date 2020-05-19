@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="item"
+            type="com.example.hellow.paging.room_conver.ConcertBean" />
+
+    </data>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:onClick="@{clickListener}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/pg_item_id"
+            android:gravity="center"
+            android:text="@{item.name}"
+            android:textSize="30dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="60dp" />
+
+        <TextView
+            android:id="@+id/pg_item_name"
+            android:gravity="center"
+            android:text="@{item.name}"
+            android:textSize="30dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="60dp" />
+
+    </LinearLayout>
+</layout>

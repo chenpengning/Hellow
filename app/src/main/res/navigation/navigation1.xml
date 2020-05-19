@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation1"
+    app:startDestination="@id/fragment_navi1">
+
+    <fragment
+        android:id="@+id/fragment_navi1"
+        android:name="com.example.hellow.navigation.Fragment_navi1"
+        android:label="fragment_fragment_navi1"
+        tools:layout="@layout/fragment_fragment_navi1" >
+        <action
+            android:id="@+id/action_fragment_navi1_to_navi3Fragment"
+            app:destination="@id/navi3Fragment" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navi2Fragment"
+        android:name="com.example.hellow.navigation.Navi2Fragment"
+        android:label="fragment_navi2"
+        tools:layout="@layout/fragment_navi2" />
+    <fragment
+        android:id="@+id/navi3Fragment"
+        android:name="com.example.hellow.navigation.Navi3Fragment"
+        android:label="fragment_navi3"
+        tools:layout="@layout/fragment_navi3" >
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="jett" />
+        <argument
+            android:name="age"
+            app:argType="integer"
+            android:defaultValue="12" />
+    </fragment>
+</navigation>

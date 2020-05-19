@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+<!-- android:onClick="onpagingLisenter"-->
+    <Button
+        android:id="@+id/insert"
+        android:textSize="30dp"
+        android:text="插入"
+        android:onClick="onpagingLisenter"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"/>
+    <Button
+        android:id="@+id/quary"
+        android:textSize="30dp"
+        android:text="查询"
+        android:onClick="onpagingLisenter"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"/>
+
+    <Button
+        android:id="@+id/delect"
+        android:text="删除所有"
+        android:textSize="30dp"
+        android:onClick="onpagingLisenter"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/pg_recycleview"
+        tools:listitem="@layout/item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

@@ -1,0 +1,17 @@
+
+1、项目采用mvvm架构
+
+2、主要使用jetpack组件 room + viewmodel+ livedata
+
+3、项目遵循谷歌最新的repack框架的数据驱动链去对数据的观察
+
+4、主要的层级结构是：view +viewmodel +resposity （room + http）
+
+5、没有使用到的databinding 、paging ，后续做项目重构优化
+
+6、以后的项目架构的设计是：
+存数据：从http 拿到数据，更新room ，更新到view中
+取数据：view ，去room中拿缓存本地数据，不涉及网络，加快ui的显示
+
+
+

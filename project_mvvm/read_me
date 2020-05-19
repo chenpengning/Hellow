@@ -13,5 +13,7 @@
 存数据：从http 拿到数据，更新room ，更新到view中
 取数据：view ，去room中拿缓存本地数据，不涉及网络，加快ui的显示
 
+7、增加navigation代码
+
 
 

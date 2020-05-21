@@ -22,7 +22,49 @@ class SecondActivity:AppCompatActivity() {
 
             text2.text = ed2.text.toString()
 
+            mAnim.startAnim()
+
+            //living()
         }
 
+        button2.setOnClickListener {
+
+            // animatorSet.cancel()
+
+            mAnim.cancelAnim()
+
+        }
+
+
+
     }
+
+//    var  animatorSet = AnimatorSet()
+//    private fun living(){
+//
+//        var listAnis = ArrayList<Animator>()
+//
+//        var an = ObjectAnimator.ofFloat(tv1, "scaleY", 1f, 2f, 1f)
+//        an.repeatCount = ValueAnimator.INFINITE
+//        an.start()
+//        listAnis.add(an)
+//
+//        var an2 = ObjectAnimator.ofFloat(tv2, "scaleY", 1f, 2f, 1f)
+//        an2.repeatCount = ValueAnimator.INFINITE
+//        an2.startDelay = 200
+//        an2.start()
+//        listAnis.add(an2)
+//
+//        var an3 = ObjectAnimator.ofFloat(tv3, "scaleY", 1f, 2f, 1f)
+//        an3.repeatCount = ValueAnimator.INFINITE
+//        an3.startDelay = 500
+//        an3.start()
+//        listAnis.add(an3)
+//
+//
+//        animatorSet.playTogether(listAnis)
+//        animatorSet.start()
+//
+//
+//    }
 }

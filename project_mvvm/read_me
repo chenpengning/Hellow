@@ -16,4 +16,11 @@
 7、增加navigation代码
 
 
+git 开发笔记
+
+git init
+
+git remote add origin url    本地仓库跟远程关联
+
+
 

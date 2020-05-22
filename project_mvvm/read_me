@@ -26,6 +26,8 @@ git config --global user.email ""
 git config --list
 git config core.ignorecase false   不要忽略大小写
 
+git pull --rebase
+git reset --hard 提交记录
 
 
 

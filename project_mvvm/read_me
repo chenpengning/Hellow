@@ -19,8 +19,14 @@
 git 开发笔记
 
 git init
-
 git remote add origin url    本地仓库跟远程关联
+
+git config --global user.name ""
+git config --global user.email ""
+git config --list
+git config core.ignorecase false   不要忽略大小写
+
+
 
 
 

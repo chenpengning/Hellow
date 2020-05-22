@@ -24,17 +24,17 @@ class SecondActivity:AppCompatActivity() {
 
             mAnim.startAnim()
 
+            lottieAnim.playAnimation()
             //living()
         }
 
         button2.setOnClickListener {
 
             // animatorSet.cancel()
-
+            lottieAnim.cancelAnimation()
             mAnim.cancelAnim()
 
         }
-
 
 
     }

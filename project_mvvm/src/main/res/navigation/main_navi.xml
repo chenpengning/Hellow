@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navi"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.fly.fox.project.ui.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" />
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.fly.fox.project.ui.MainFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_firstFragment"
+            app:destination="@id/firstFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_animaFragment"
+            app:destination="@id/animaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/animaFragment"
+        android:name="com.fly.fox.project.ui.AnimaFragment"
+        android:label="fragment_anima"
+        tools:layout="@layout/fragment_anima" />
+</navigation>

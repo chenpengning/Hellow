@@ -27,4 +27,12 @@
         android:layout_height="wrap_content"
         android:text="喷射" />
 
+    <com.fly.fox.project.view.AttachButton
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@android:color/darker_gray"
+        android:layout_width="60dp"
+        android:layout_height="60dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

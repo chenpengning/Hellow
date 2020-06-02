@@ -20,5 +20,12 @@
             android:layout_height="wrap_content"
             android:text="仿qq空间粒子喷射效果" />
 
+        <Button
+            android:id="@+id/bt_right_bar"
+            android:onClick="itemViewClick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="右边侧边栏" />
+
     </LinearLayout>
 </layout>

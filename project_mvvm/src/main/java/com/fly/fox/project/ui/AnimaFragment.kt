@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.fly.fox.project.R
+import com.fly.fox.project.view.RightDialog
+import kotlinx.android.synthetic.main.fragment_anima.*
 
 /**
  * A simple [Fragment] subclass.
@@ -19,6 +21,17 @@ class AnimaFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_anima, container, false)
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        mv_right_rl.setOnClickListener {
+
+
+            RightDialog().show(parentFragmentManager, "fd")
+        }
     }
 
 

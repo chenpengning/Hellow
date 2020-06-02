@@ -15,4 +15,9 @@
         <attr name="customIsDrag" format="boolean" />
     </declare-styleable>
 
+    <style name="BottomDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_out</item>
+    </style>
+
 </resources>

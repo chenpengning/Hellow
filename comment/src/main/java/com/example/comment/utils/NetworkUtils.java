@@ -58,41 +58,7 @@ public final class NetworkUtils {
         return info != null && info.isConnected();
     }
 
-    /**
-     * Return whether network is available using ping.
-     * <p>Must hold {@code <uses-permission android:name="android.permission.INTERNET" />}</p>
-     * <p>The default ping ip: 223.5.5.5</p>
-     *
-     * @return {@code true}: yes<br>{@code false}: no
-     */
-    @RequiresPermission(INTERNET)
-    public static boolean isAvailableByPing() {
-        return isAvailableByPing(null);
-    }
 
-    /**
-     * Return whether network is available using ping.
-     * <p>Must hold {@code <uses-permission android:name="android.permission.INTERNET" />}</p>
-     *
-     * @param ip The ip address.
-     * @return {@code true}: yes<br>{@code false}: no
-     */
-    @RequiresPermission(INTERNET)
-    public static boolean isAvailableByPing(String ip) {
-        if (ip == null || ip.length() <= 0) {
-            // default ping ip
-            ip = "223.5.5.5";
-        }
-        ShellUtils.CommandResult result = ShellUtils.execCmd(String.format("ping -c 1 %s", ip), false);
-        boolean ret = result.result == 0;
-        if (result.errorMsg != null) {
-            Log.d("NetworkUtils", "isAvailableByPing() called" + result.errorMsg);
-        }
-        if (result.successMsg != null) {
-            Log.d("NetworkUtils", "isAvailableByPing() called" + result.successMsg);
-        }
-        return ret;
-    }
 
     @RequiresPermission(INTERNET)
     public static void isAvailableByDns(String ip) {
@@ -238,17 +204,6 @@ public final class NetworkUtils {
         return ni != null && ni.getType() == ConnectivityManager.TYPE_WIFI;
     }
 
-    /**
-     * Return whether wifi is available.
-     * <p>Must hold {@code <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />},
-     * {@code <uses-permission android:name="android.permission.INTERNET" />}</p>
-     *
-     * @return {@code true}: available<br>{@code false}: unavailable
-     */
-    @RequiresPermission(allOf = {ACCESS_WIFI_STATE, INTERNET})
-    public static boolean isWifiAvailable() {
-        return getWifiEnabled() && isAvailableByPing();
-    }
 
     /**
      * Return the name of network operate.

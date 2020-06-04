@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.fly.fox.project.R
 import com.fly.fox.project.view.RightDialog
+import com.lzf.easyfloat.EasyFloat
 import kotlinx.android.synthetic.main.fragment_anima.*
 
 /**
@@ -31,6 +32,11 @@ class AnimaFragment : Fragment() {
 
 
             RightDialog().show(parentFragmentManager, "fd")
+        }
+
+        bottom.setOnClickListener {
+
+            EasyFloat.showAppFloat()
         }
     }
 

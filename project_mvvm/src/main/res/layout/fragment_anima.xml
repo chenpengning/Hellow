@@ -33,5 +33,12 @@
 
     </RelativeLayout>
 
+    <Button
+        android:id="@+id/bottom"
+        android:text="开启浮窗"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

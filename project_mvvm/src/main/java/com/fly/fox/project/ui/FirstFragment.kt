@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.fly.fox.project.R
+import com.lzf.easyfloat.EasyFloat
 import kotlinx.android.synthetic.main.fragment_first.*
 
 class FirstFragment : Fragment() {
@@ -40,6 +41,11 @@ class FirstFragment : Fragment() {
                 it.startAnimation(it.measuredWidth, it.measuredHeight)
             }
 
+        }
+
+        button1.setOnClickListener {
+
+            EasyFloat.hideAppFloat()
         }
 
     }

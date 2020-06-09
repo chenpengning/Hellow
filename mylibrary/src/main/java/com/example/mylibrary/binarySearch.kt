@@ -8,7 +8,7 @@ fun main() {
     val end = array.size - 1
 
 
-    val mid = (end + start) / 2
+    val mid = (end + start).ushr(1)
 
     println("====mid = $mid")
 
@@ -27,7 +27,8 @@ fun binarySearch(array: Array<Int>, value: Int): Int {
 
     repeat(array.count()) {
 
-        mid = (end + start) / 2
+        //mid = (end + start) / 2
+        mid = (end + start).ushr(1)
 
         when {
             value < array[mid] -> {

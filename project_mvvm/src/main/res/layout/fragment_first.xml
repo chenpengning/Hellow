@@ -43,4 +43,12 @@
         android:layout_width="match_parent"
         android:layout_height="50dp" />
 
+    <Button
+        android:id="@+id/button2"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="250dp"
+        android:text="点击我"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

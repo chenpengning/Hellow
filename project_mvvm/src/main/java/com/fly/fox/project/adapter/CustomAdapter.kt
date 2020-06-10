@@ -14,10 +14,9 @@ import com.fly.fox.project.R
  */
 class CustomAdapter(list: List<String>) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
-    private var mList: MutableList<String>
+    private var mList: MutableList<String> = ArrayList()
 
     init {
-        mList = ArrayList<String>()
         mList.clear()
         mList.addAll(list)
     }
@@ -107,7 +106,7 @@ class CustomAdapter(list: List<String>) : RecyclerView.Adapter<CustomAdapter.Vie
 
             //list的逻辑
             else -> {
-                var name = mList[position - 1]
+                val name = mList[position - 1]
 
                 holder.content.text = name
 

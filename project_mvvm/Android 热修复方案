@@ -1,0 +1,28 @@
+
+
+ClassLoader 的双亲委托机制
+
+===》 某个类加载器加载类时，首先会把加载任务委托给父类加载器，依次递归，如果父类能完成加载任务，直接返回，
+如果父类加载器无法完成加载任务或者没有父类加载器，则自己去加载。
+
+
+PathClassLoader / DexClassLoader  ---BaseDexClassLoader
+
+
+市场热修复框架：较为著名的有腾讯的Tinker和阿里的Andfix以及QQ空间补丁。
+
+热修复===》》multidex方案
+
+Dex分包机制：一个dex文件最多只能存放65536个方法。随着现今App的开发日益复杂，导致方法数早已超过了这个上限。为了解决这个问题，Google提出了multidex方案，即一个apk文件可以包含多个dex文件。
+
+类加载机制：Android系统通过PathClassLoader来加载系统类和主dex中的类。而DexClassLoader则用于加载其他dex文件中的类。上述两个类都是继承自BaseDexClassLoader，具体的加载方法是findClass
+
+热修复原理：DexPathList的findClass也很简单，dexElements是维护dex文件的数组，每一个item对应一个dex文件。DexPathList遍历dexElements，从每一个dex文件中查找目标类，在找到后即返回并停止遍历。所以要想达到热修复的目的就必须让补丁dex在dexElements中的位置先于原有dex：
+
+pathList是一个DexPathList类型，从变量名和类型名就可以看出这是一个维护Dex的容器。
+
+
+
+寄存器 ===cpu 存储单元
+
+什么是基于栈 、寄存器 虚拟机？

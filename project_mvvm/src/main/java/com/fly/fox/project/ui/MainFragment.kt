@@ -68,6 +68,12 @@ class MainFragment : Fragment() {
             findNavController().navigate(R.id.action_mainFragment_to_floatFragment)
         }
 
+        bt_touch.setOnClickListener {
+
+            findNavController().navigate(R.id.action_mainFragment_to_touchFragment)
+
+        }
+
     }
 
 }

@@ -3,10 +3,12 @@ package com.fly.fox.project.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.fly.fox.project.R
+import com.fly.fox.project.utils.listener
 
 
 /**
@@ -15,6 +17,15 @@ import com.fly.fox.project.R
 class CustomAdapter(list: List<String>) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
     private var mList: MutableList<String> = ArrayList()
+
+    /**
+     * 高级函数改造接口回调
+     */
+//    private  lateinit  var listener : (Any) -> Unit
+//    fun  setListener(block :(Any) -> Unit){
+//        this.listener = block
+//    }
+    //-------
 
     init {
         mList.clear()
@@ -96,6 +107,11 @@ class CustomAdapter(list: List<String>) : RecyclerView.Adapter<CustomAdapter.Vie
             //处理header 逻辑
             0 -> {
                 //holder.foot.text = "到底部了。。。。"
+                holder.bt1_header.setOnClickListener {
+                    listener?.let { it1 -> it1("bt1_header click ....") }
+                }
+
+
 
             }
             //处理foot 逻辑
@@ -109,6 +125,11 @@ class CustomAdapter(list: List<String>) : RecyclerView.Adapter<CustomAdapter.Vie
                 val name = mList[position - 1]
 
                 holder.content.text = name
+
+                holder.itemView.setOnClickListener {
+                    //listener(position)
+                    listener?.let { it1 -> it1(position) }
+                }
 
             }
 
@@ -124,9 +145,14 @@ class CustomAdapter(list: List<String>) : RecyclerView.Adapter<CustomAdapter.Vie
         lateinit var header: LinearLayout
         lateinit var foot: TextView
 
+        lateinit var bt1_header: Button
+
         init {
             when (viewType) {
-                HEADER -> header = itemView.findViewById(R.id.ly_header)
+                HEADER -> {
+                    header = itemView.findViewById(R.id.ly_header)
+                    bt1_header = header.findViewById(R.id.bt1_header)
+                }
                 FOOT -> foot = itemView.findViewById(R.id.tv_foot)
                 else -> content = itemView.findViewById(R.id.tv_name)
             }

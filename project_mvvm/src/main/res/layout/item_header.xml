@@ -10,6 +10,7 @@
         android:layout_height="wrap_content">
 
         <Button
+            android:id="@+id/bt1_header"
             android:text="Header"
             android:layout_weight="1"
             android:layout_width="match_parent"

@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_mainFragment_to_floatFragment"
             app:destination="@id/floatFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_touchFragment"
+            app:destination="@id/touchFragment" />
 
     </fragment>
 
@@ -38,4 +41,9 @@
         android:id="@+id/floatFragment"
         android:name="com.fly.fox.project.ui.FloatViewFragment"
         tools:layout="@layout/fragment_floatview" />
+
+    <fragment
+        android:id="@+id/touchFragment"
+        android:name="com.fly.fox.project.ui.TouchFragment"
+        tools:layout="@layout/fragment_touch" />
 </navigation>

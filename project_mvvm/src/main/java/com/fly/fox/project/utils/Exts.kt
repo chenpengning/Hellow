@@ -1,5 +1,6 @@
 package com.fly.fox.project.utils
 
+import android.content.Context
 import android.widget.Button
 import android.widget.EditText
 
@@ -14,5 +15,13 @@ fun Button.enable(ed:EditText,methon:() ->Boolean){
             button.isEnabled = methon()
         }
     })
+}
 
+/**
+ * 高级函数改造接口回调,万能接口回掉
+ */
+var listener: ((Any) -> Unit)? = null
+
+fun Context.setCallBack(block: (Any) -> Unit) {
+    listener = block
 }

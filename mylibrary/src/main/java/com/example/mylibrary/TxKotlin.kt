@@ -34,7 +34,34 @@ fun main() {
     }
 
 
+    val ç = { a: Int ->
+        println("===$a")
+
+        a + 5
+    }
+
+    var m02: (Int) -> Int = { a: Int ->
+        println("===$a")
+
+        a + 5
+    }
+
+    println("==01=${m02(8)}")
+
     //println(kk("df"))
+
+    m03(50) {
+        50
+        60
+        it + 100
+    }
+
+}
+
+fun m03(num: Int, m02: (Int) -> Int) {
+
+    println("===m03 result=${num.plus(m02(num))}")
+
 
 }
 

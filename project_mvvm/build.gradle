@@ -84,4 +84,7 @@ dependencies {
 
     //集成360插件化框架
     //implementation 'com.qihoo360.replugin:replugin-host-lib:2.2.4'
+
+    //集成EventBus
+    implementation 'org.greenrobot:eventbus:3.2.0'
 }

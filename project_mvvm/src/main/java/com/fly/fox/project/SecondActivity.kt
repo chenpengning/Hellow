@@ -1,19 +1,23 @@
 package com.fly.fox.project
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
+import com.fly.fox.project.event.SaveEvent
 import kotlinx.android.synthetic.main.activity_second.*
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 
 class SecondActivity:AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
-    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
+
+        EventBus.getDefault().register(this)
+
 
 
         button1.setOnClickListener {
@@ -34,8 +38,16 @@ class SecondActivity:AppCompatActivity() {
             lottieAnim.cancelAnimation()
             mAnim.cancelAnim()
 
+
+            EventBus.getDefault().post(SaveEvent())
+
         }
 
+
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun message(event: SaveEvent) {
 
     }
 

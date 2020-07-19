@@ -1,0 +1,23 @@
+
+1、 跨平台的移动UI框架 ，使用DVM  dark虚拟机编译成不同的代码实现跨平台
+
+2、Flutter 特点
+    （1 热重载 -- 不用重新编译，改动代码直接反应UI的变化
+
+      实现原理，在手机启动一个WebSocket服务，与电脑进行通讯 ，变化及时反馈给手机app
+
+    （2 漂亮的UI界面，app 风格的统一
+
+    （3 性能稳定
+
+3、 开发的语言 ==  Dark 语言
+
+（1）基于 JIT (即时编译)快速的开发周期，节省开发事件 == 编译成热点代码
+（2）基于 AOT （静态编译）发布包，== 程序运行编译成本地机器码
+（3）单线程 == 不需要锁
+（4）垃圾回收 == 多生代垃圾回收器
+
+/Users/chenpengning/Files/flutter/flutter
+
+ export PATH=~/Users/chenpengning/Files/flutter/flutter/bin:$PATH
+

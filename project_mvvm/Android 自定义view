@@ -1,0 +1,50 @@
+
+1、小米面试 ： LayoutParam 跟 MeasureSpec 的关系
+
+
+2、新浪面试： MeasureSpc 是什么
+
+---》是一个32位的int值
+
+== 高两位 00   ：表示测量模式  EXACTLY , AT_MOST , UNSPECIFIED
+
+EXACTLY ：表示具体的大小数值 如 30dp
+
+AT_MOST ： 表示不可超过某个值 如 wrap_content、match_parent
+
+UNSPECIFIED ：系统使用，不做view的大小限制
+
+== 低30 位：表示 view 的 size 大小
+
+
+3、为什么需要Measure
+
+（1）需要测量子view的大小来确定 自身view的大小
+
+
+4、getMeasureWidth 与 getWidth 的区别
+
+（1）onMeasure（） 调用后  view.getMeasureWidth 有值
+
+（2）onLayout（） 调用后  view.getWidth 有值
+
+
+5、 https://www.jianshu.com/p/0723ff4123e1
+
+6、插件化换肤的思路？
+
+
+7、scrollView 与RecycleView 嵌套 与事件分发机制
+
+1、dispatchTou
+
+
+android.support.design.widget.CoordinatorLayout
+
+Typora
+
+8、文字如何绘制在中心点？ y轴的中心
+
+9、canvas 图层的概念
+
+

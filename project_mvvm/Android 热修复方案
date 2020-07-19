@@ -16,7 +16,7 @@ PathClassLoader / DexClassLoader  ---BaseDexClassLoader
 
 热修复===》》multidex方案
 
-Dex分包机制：一个dex文件最多只能存放65536个方法。随着现今App的开发日益复杂，导致方法数早已超过了这个上限。为了解决这个问题，Google提出了multidex方案，即一个apk文件可以包含多个dex文件。
+Dex分包机制：一个dex文件最多只能存放65535个方法。随着现今App的开发日益复杂，导致方法数早已超过了这个上限。为了解决这个问题，Google提出了multidex方案，即一个apk文件可以包含多个dex文件。
 
 类加载机制：Android系统通过PathClassLoader来加载系统类和主dex中的类。而DexClassLoader则用于加载其他dex文件中的类。上述两个类都是继承自BaseDexClassLoader，具体的加载方法是findClass
 
@@ -29,3 +29,12 @@ pathList是一个DexPathList类型，从变量名和类型名就可以看出这�
 寄存器 ===cpu 存储单元
 
 什么是基于栈 、寄存器 虚拟机？
+
+字节码插桩技术
+1、应用 == 自动埋点、aspeckJ
+
+美团热修复
+
+bsdiff：差分算法 == 全格式 对二进制文件的差分算法
+
+Tinker ：核心===DexDiff == 针对Dex文件的差分算法，优化合成效率，差分包大小

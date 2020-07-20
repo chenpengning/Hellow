@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.fly.fox.project.R
@@ -44,6 +45,16 @@ class MainFragment : Fragment() {
 
         mainFragViewmodel = ViewModelProvider(this).get(MainFragViewmodel::class.java)
 
+        mainFragViewmodel?.login("", "")
+
+
+        mainFragViewmodel?.data?.observe(MainFragment@ this, Observer {
+
+
+        })
+
+
+        //com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar',
 
 
 

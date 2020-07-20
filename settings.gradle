@@ -1,2 +1,2 @@
-include ':app', ':mylibrary', ':order', ':person', ':comment', ':comilper', ':annotation', ':project_mvvm'
+include ':app', ':mylibrary', ':order', ':person', ':comment', ':comilper', ':annotation', ':project_mvvm', ':network'
 rootProject.name='Hellow'

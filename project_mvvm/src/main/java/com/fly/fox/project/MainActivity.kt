@@ -1,9 +1,9 @@
 package com.fly.fox.project
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
 
             Log.d("xxxx","=====countbutton onclick ....")
         }
+
 
     }
 

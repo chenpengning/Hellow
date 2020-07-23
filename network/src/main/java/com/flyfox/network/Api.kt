@@ -5,6 +5,7 @@ import com.flyfox.newsclient.net.bean.LoginRes
 import com.flyfox.newsclient.net.bean.ResponWrap
 import com.flyfox.newsclient.net.bean.request.LoginReq
 import io.reactivex.Observable
+import io.reactivex.Single
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.Field
@@ -24,7 +25,10 @@ interface Api {
     fun login(@Field("username") name: String, @Field("password") pwd: String): Observable<ResponWrap<LoginRes>>
 
     @POST("/user/login")
-    fun loginBody(@Body body: LoginReq): Observable<ResponWrap<LoginRes>>
+    fun loginBody(@Body body: LoginReq): Single<ResponWrap<LoginRes>>
+
+    @POST("/user/login")
+    fun loginBody1(@Body body: LoginReq): Observable<ResponWrap<LoginRes>>
 
     @POST("/user/login")
     fun loginTemp(@Body body: LoginReq): LiveData<ResponWrap<LoginRes>>

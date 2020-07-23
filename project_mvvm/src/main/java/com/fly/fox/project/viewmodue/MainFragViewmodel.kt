@@ -22,6 +22,22 @@ class MainFragViewmodel : ViewModel() {
     }
 
 
+    fun login1(name: String, pwd: String) {
+
+
+        NetWorkResposity.instance.loginBody1(name, pwd)
+            .subscribe({
+
+
+            }, {
+
+                it.printStackTrace()
+
+
+            })
+    }
+
+
 
 
 }

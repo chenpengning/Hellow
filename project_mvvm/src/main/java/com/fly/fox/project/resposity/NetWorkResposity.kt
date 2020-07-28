@@ -21,10 +21,10 @@ class NetWorkResposity private constructor() {
 
     fun login(name: String, pwd: String, data: MutableLiveData<ResponWrap<LoginRes>>) {
 
-        val response =
-            RetrofitFactory.instance.create(Api::class.java).loginTemp(LoginReq(name, pwd)).value
-
-        data.value = response
+//        val response =
+//            RetrofitFactory.instance.create(Api::class.java).loginTemp(LoginReq(name, pwd)).value
+//
+//        data.value = response
 
 
     }

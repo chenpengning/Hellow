@@ -18,7 +18,7 @@ class MainFragViewmodel : ViewModel() {
 
     fun login(name: String, pwd: String) {
 
-        NetWorkResposity.instance.login(name, pwd, data)
+        //NetWorkResposity.instance.login(name, pwd, data)
     }
 
 

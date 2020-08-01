@@ -20,4 +20,18 @@
         <item name="android:windowExitAnimation">@anim/dialog_out</item>
     </style>
 
+
+    <!--HeaderBar自定义属性-->
+    <declare-styleable name="HeaderBar">
+        <attr name="isShowBack" />
+        <attr name="isShowRight" />
+        <attr name="isShowCancel" />
+        <attr name="isShowCamera" />
+        <attr name="isShowMore" />
+        <attr name="isShowWeekly" />
+        <attr name="isShowWeeklyImg" />
+        <attr name="titleText" />
+        <attr name="rightText" />
+    </declare-styleable>
+
 </resources>

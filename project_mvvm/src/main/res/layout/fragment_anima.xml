@@ -9,6 +9,11 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <com.fly.fox.project.view.HeaderBar
+        android:layout_width="match_parent"
+        app:titleText="动画标题"
+        android:layout_height="60dp" />
+
     <RelativeLayout
         android:id="@+id/mv_right_rl"
         android:layout_marginTop="100dp"

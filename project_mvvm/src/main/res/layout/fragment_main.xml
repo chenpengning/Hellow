@@ -40,5 +40,11 @@
             android:layout_height="wrap_content"
             android:text="recycleview" />
 
+        <Button
+            android:id="@+id/bt_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="时间选择" />
+
     </LinearLayout>
 </layout>

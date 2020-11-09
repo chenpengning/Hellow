@@ -1,0 +1,63 @@
+
+Rxjava 响应式编程  == 卡片式编程
+
+链式调用
+
+网络防抖 嵌套
+
+操作符：flatmap  解决网络嵌套
+
+doOnNext 繁琐的api请求 ==到达目的 主线程 异步线程切换
+
+----------------------------
+
+标准的观察者模式跟Rxjava观察者 的区别
+
+===标准的观察者模式 == 一个被观察者 对应 多个观察者对象 ，被观察者发生改变，所有的观察者才能通知到
+
+===Rxjava 观察者模式  == 多个被观察者 对一个 一个观察者 ，两个发生订阅后，才发送改变通知，
+并且只有最后一个观察者才能收到通知
+
+Rxjava 的耦合度更低 ，被观察者与观察者通过  抽象层 的发射器关联
+
+具体表现 ： 被观察者 ---发射器 --- 观察者
+
+Rxjava  去掉了容器的概念
+
+----------------------------
+
+Map 操作符的变换原理  画出 流程图
+
+
+--------------------------------
+
+Rxjava 的装饰器模式  ， 形象拆包裹一样
+
+
+Rxjava 背压的概念==== 生产的速度  大于 消费的速度
+
+--------------------------------
+Rxjava 的线程切换源码
+
+Schedulers  的策略机制
+
+Schedulers.io  线程切换  在线程池中管控
+
+ /**
+     * 上传头像
+     */
+    @Multipart
+    @POST("kinship-api/upload/head")
+    fun uploadAvatar(@Part part: MultipartBody.Part): Single<Rep<Upload>>
+
+    fun uploadAvatar(files: File): Single<Rep<Upload>> {
+            val requestBody = RequestBody.create(MediaType.parse("image/jpg"), files)
+            val imageBodyPart = MultipartBody.Part.createFormData("files", files.name, requestBody)
+            return uploadService.uploadAvatar(imageBodyPart)
+                    .compose(applySchedulersOnSingle())
+        }
+
+
+
+
+

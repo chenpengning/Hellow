@@ -36,3 +36,73 @@
 10、https://github.com/brucetoo/PickView 时间选择器
 
 11、https://juejin.im/post/6844903517015015431 日期的框架
+
+autoservice
+
+Android  四大组件+自定义view（创建流程+事件分发+滑动冲突+嵌套滑动）
+
+
+性能优化模块：
+
+1.为什么数组结构的访问比较快 === 是因为连续的地址
+
+2、求模运算是一个多对一的过程
+
+HashMap  的hash碰撞
+
+需要扩容的条件？加载因子 --0.75
+
+LeetCode
+
+标记清除算法
+
+图片的一个像素占多少内存？
+
+argb_8888   --一个像素占 4 个字节
+
+
+腾讯=小米的面试总结
+
+基础：并发 syn 原理 ，CAS AQS reenlock
+jvm 内存模型。 classloader
+网络：http 版本区别
+https 认证过程？ https 一定安全吗
+AMS功能 职责
+startactivity 流程 43多步骤 ，整体去概括
+性能优化：内存优化 ===bitmap  卡顿的优化
+java集合框架：
+hashmap
+handler 原理
+手写代码 ： mvp == 登陆功能 == 牛客网
+
+数据结构：
+链表 二叉树
+
+
+kotlin
+内联函数，高阶函数，泛型，lambda表达式
+
+mvp mvvm mvc
+mvvm和mvp区别
+viewmodel怎么实现的，原理(这个没答上来)
+
+handle的原理，子线程为什么不能更新UI？
+
+作者：lbccccc
+链接：https://www.nowcoder.com/discuss/551294
+来源：牛客网
+
+(从wms初始化view的源码这块说了几个绕开子线程更新ui报错机制的方法感觉这里比较加分，感觉面试官看我的眼神都不一样了)
+view的绘制过程
+滑动冲突
+接口和抽象类的区别
+内部类和静态内部类的区别
+string stringbuffer stringbuilder
+hashmap的源码结构，arraylist，linkedlist
+介绍jvm运行时内存结构
+
+gc的三种方法复制算法怎么弄的，为什么新生代用复制，年老代用整理
+
+常量池在哪
+可重入锁，synchronized，volatile，对象锁类锁
+对象头markdowm的偏向锁轻量级锁重量级锁

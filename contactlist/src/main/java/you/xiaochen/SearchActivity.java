@@ -1,3 +1,4 @@
+/*
 package you.xiaochen;
 
 import android.content.Context;
@@ -15,9 +16,12 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.reactivestreams.Subscription;
+
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
+import io.reactivex.Observable;
 import rx.Observable;
 import rx.Subscriber;
 import rx.Subscription;
@@ -31,20 +35,26 @@ import you.xiaochen.cn.CNPinyinIndexFactory;
 import you.xiaochen.search.Contact;
 import you.xiaochen.search.TextViewChangedOnSubscribe;
 
+*/
 /**
  * Created by you on 2017/9/12.
- */
+ *//*
+
 
 public class SearchActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Toolbar toolbar;
-    /**
-     * activity中的根目录
-     */
+    */
+/**
+ * activity中的根目录
+ *//*
+
     private View ll_root;
-    /**
-     * 窗体控件上一次的高度,用于监听键盘弹起
-     */
+    */
+/**
+ * 窗体控件上一次的高度,用于监听键盘弹起
+ *//*
+
     private int mLastHeight;
 
     private EditText et_search;
@@ -88,7 +98,9 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
                         if (mLastHeight != r.bottom) {
                             mLastHeight = r.bottom;
                             ViewGroup.LayoutParams params = ll_root.getLayoutParams();
-                            params.height = r.bottom - ll_root.getTop()/*  - statusHeight*/;
+                            params.height = r.bottom - ll_root.getTop()*/
+/*  - statusHeight*//*
+;
                             ll_root.setLayoutParams(params);
                         }
                     }
@@ -107,9 +119,11 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         bar.setCustomView(actionView, actionBarParams);
         ConfigUtils.setStatusBarColor(this, getResources().getColor(R.color.colorPrimary));
 
-        /**
-         * 下面是搜索框智能
-         */
+        */
+/**
+ * 下面是搜索框智能
+ *//*
+
         TextViewChangedOnSubscribe plateSubscribe = new TextViewChangedOnSubscribe();
         plateSubscribe.addTextViewWatcher(et_search);
         subscription = Observable.create(plateSubscribe).debounce(300, TimeUnit.MILLISECONDS, AndroidSchedulers.mainThread())
@@ -151,11 +165,13 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         super.onDestroy();
     }
 
-    /**
-     * 搜索订阅
-     *
-     * @return
-     */
+    */
+/**
+ * 搜索订阅
+ *
+ * @return
+ *//*
+
     private Observable<ArrayList<CNPinyinIndex<Contact>>> createObservable(final String keywork) {
         return Observable.create(new Observable.OnSubscribe<ArrayList<CNPinyinIndex<Contact>>>() {
             @Override
@@ -168,3 +184,4 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     }
 
 }
+*/

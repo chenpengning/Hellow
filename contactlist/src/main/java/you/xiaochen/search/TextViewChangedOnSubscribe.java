@@ -1,3 +1,4 @@
+/*
 package you.xiaochen.search;
 
 import android.text.Editable;
@@ -8,9 +9,11 @@ import rx.Observable;
 import rx.Subscriber;
 import rx.android.MainThreadSubscription;
 
+*/
 /**
  * Created by you on 2017/4/10.
- */
+ *//*
+
 
 public class TextViewChangedOnSubscribe implements Observable.OnSubscribe<String> {
 
@@ -50,3 +53,4 @@ public class TextViewChangedOnSubscribe implements Observable.OnSubscribe<String
     }
 
 }
+*/

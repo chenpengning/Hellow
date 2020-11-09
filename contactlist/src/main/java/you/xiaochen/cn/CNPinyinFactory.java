@@ -4,10 +4,10 @@ import android.text.TextUtils;
 
 import androidx.collection.ArrayMap;
 
-import com.github.promeg.pinyinhelper.Pinyin;
-
 import java.util.ArrayList;
 import java.util.List;
+
+//import com.github.promeg.pinyinhelper.Pinyin;
 
 /**
  * Created by you on 2017/9/8.
@@ -92,17 +92,18 @@ public final class CNPinyinFactory {
      * @return
      */
     private static String charToPinyin(char c, int index) {
-        if (index == 0) {
-            String pinyin = SURNAMES.get(c);
-            if (pinyin != null) {
-                return pinyin;
-            }
-        }
-        String pinyin = Pinyin.toPinyin(c);
-        if (pinyin == null) {
-            pinyin = String.valueOf(c);
-        }
-        return pinyin;
+//        if (index == 0) {
+//            String pinyin = SURNAMES.get(c);
+//            if (pinyin != null) {
+//                return pinyin;
+//            }
+//        }
+//        String pinyin = Pinyin.toPinyin(c);
+//        if (pinyin == null) {
+//            pinyin = String.valueOf(c);
+//        }
+//        return pinyin;
+        return "";
     }
 
     /**

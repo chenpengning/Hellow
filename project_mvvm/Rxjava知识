@@ -50,7 +50,7 @@ Schedulers.io  线程切换  在线程池中管控
     @POST("kinship-api/upload/head")
     fun uploadAvatar(@Part part: MultipartBody.Part): Single<Rep<Upload>>
 
-    fun uploadAvatar(files: File): Single<Rep<Upload>> {
+    fun uploadAvatar(files: File): Single<Rep<Upload>> {``
             val requestBody = RequestBody.create(MediaType.parse("image/jpg"), files)
             val imageBodyPart = MultipartBody.Part.createFormData("files", files.name, requestBody)
             return uploadService.uploadAvatar(imageBodyPart)
